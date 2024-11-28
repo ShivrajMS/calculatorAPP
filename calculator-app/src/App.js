@@ -20,7 +20,9 @@ const Calculator = () => {
             setInput('Error');
         }
     };
-
+    const incrementByTwo = () => {
+      setInput((parseInt(input) || 0)+2);
+    };
     return (
         <div className="calculator">
             <input type="text" value={input} readOnly />
@@ -29,6 +31,7 @@ const Calculator = () => {
                 <button onClick={() => handleClick('2')}>2</button>
                 <button onClick={() => handleClick('3')}>3</button>
                 <button onClick={() => handleClick('+')}>+</button>
+                <button onClick={() => incrementByTwo('+2')}>+2</button>
             </div>
             <div>
                 <button onClick={() => handleClick('4')}>4</button>
@@ -40,7 +43,7 @@ const Calculator = () => {
                 <button onClick={() => handleClick('7')}>7</button>
                 <button onClick={() => handleClick('8')}>8</button>
                 <button onClick={() => handleClick('9')}>9</button>
-                <button onClick={() => handleClick('')}></button>
+                <button onClick={() => handleClick('*')}>*</button>
             </div>
             <div>
                 <button onClick={() => handleClear()}>C</button>
